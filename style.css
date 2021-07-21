@@ -1,0 +1,73 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html {
+   font-size: 62.5%;
+}
+body {
+   font-family: 'Yomogi', cursive;
+   font-weight: bold;
+   background-color: #bba46d;
+   font-size: 2rem;
+}
+#header {
+   text-align: center;
+   line-height: 2.7rem;
+   /* background-color: #bba46d; */
+   padding: 3rem 3rem 0;
+}
+.header__heading {
+   font-size: 3rem;
+   /* margin-bottom: 1rem; */
+}
+.header__underline {
+   width: 25rem;
+   height: .2rem;
+   background-color: #F2E94E;
+   margin: 1rem auto;
+}
+#directions {
+   border-bottom: .5rem solid #F2E94E;
+   text-align: center;
+   padding-bottom: 1rem;
+}
+.alert {
+   background-color: #F2E94E;
+   width: 75rem;
+   margin: 0 auto;
+   padding: .5rem 0;
+   border-radius: 1.5rem;
+}
+#grass {
+   position: relative;
+   height: 60rem;
+   width: 100%;
+   background: url('grass.jpg') center;
+   overflow-x: hidden;
+}
+#cow {
+   background-color: white;
+   height: 10rem;
+   width: 10rem;
+   font-size: 3rem;
+   border: 1px solid black;
+   border-radius: 40%;
+   transition: transform .7s ease-in-out;
+}
+#cow__left-eye {
+   position: absolute;
+   left: 1.5rem;
+   top: .4rem;
+}
+#cow__right-eye {
+   position: absolute;
+   right: 1.5rem;
+   top: .4rem;
+}
+#cow__tail {
+   position: absolute;
+   bottom: -2.5rem;
+   left: 50%;
+}

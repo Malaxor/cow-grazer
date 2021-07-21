@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Sandbox</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- <link rel="stylesheet" href="reset.css"> -->
+      <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <header id='header'>
+            <h1 class='header__heading'>Instructions</h1>
+            <div class='header__underline'></div>
+            <p>Use your keyboard's arrow keys to mooooove me North (up), South (down), East (right), and West (left).</p>
+            <p>I move only after collecting a set of directions compiled from every arrow key you press.</p>
+            <p>After you're done feeding me directions, press Enter to move me somewhere I can chomp on real food. No offense.</p>
+            <p><em>NOTE: I'm a well-behaved creature who does not stray from the grass.</em></p>
+            <p><em>My short attention spans limits me to 10 movements per turn.</em></p>
+            <div class='header__underline'></div>
+      </header>
+      <div id="directions">
+         <h4 id='directions__header'>Directions: </h4>
+         <p id='directions__key-display'></p>
+      </div>
+      <div id='grass'>
+         <div id='cow'>
+            <div id='cow__left-eye'>0</div>
+            <div id='cow__right-eye'>0</div>
+            <div id='cow__tail'>|</div>
+         </div>
+      </div>
+      <script src="https://kit.fontawesome.com/d79e0aba73.js" crossorigin="anonymous"></script>
+      <script src="app.js"></script>
+   </body>
+</html>
