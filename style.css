@@ -15,12 +15,10 @@ body {
 #header {
    text-align: center;
    line-height: 2.7rem;
-   /* background-color: #bba46d; */
-   padding: 3rem 3rem 0;
+   padding: 1rem;
 }
 .header__heading {
    font-size: 3rem;
-   /* margin-bottom: 1rem; */
 }
 .header__underline {
    width: 25rem;
@@ -33,41 +31,27 @@ body {
    text-align: center;
    padding-bottom: 1rem;
 }
+#directions__header {
+   margin-bottom: .5rem;
+}
 .alert {
    background-color: #F2E94E;
-   width: 75rem;
+   width: 70rem;
    margin: 0 auto;
    padding: .5rem 0;
    border-radius: 1.5rem;
+   /* will change display to block when the alert fires */
+   display: none;
 }
 #grass {
    position: relative;
-   height: 60rem;
+   height: 75rem;
    width: 100%;
    background: url('grass.jpg') center;
    overflow-x: hidden;
 }
 #cow {
-   background-color: white;
-   height: 10rem;
-   width: 10rem;
-   font-size: 3rem;
-   border: 1px solid black;
-   border-radius: 40%;
-   transition: transform .7s ease-in-out;
-}
-#cow__left-eye {
-   position: absolute;
-   left: 1.5rem;
-   top: .4rem;
-}
-#cow__right-eye {
-   position: absolute;
-   right: 1.5rem;
-   top: .4rem;
-}
-#cow__tail {
-   position: absolute;
-   bottom: -2.5rem;
-   left: 50%;
+   height: 15rem;
+   width: 15rem;
+   transition: transform .5s ease-in-out;
 }
