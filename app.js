@@ -5,7 +5,8 @@ const keysDisplayEl = document.getElementById('directions__key-display');
 const alertDiv = document.getElementsByClassName('alert')[0];
 let moveBy = 10; // move the cow 10 pixels (up, down, left or right).
 const { height: cowElHeight } = window.getComputedStyle(cowEl);
-let { height: grassElHeight, width: grassElWidth } = window.getComputedStyle(grassEl);
+let { height: grassElHeight } = window.getComputedStyle(grassEl);
+const { width: grassElWidth } = grassEl.getBoundingClientRect();
 
 // cow's start position predicated on the field's length and width divided by two
 function cowStartPosition({ height, width }) {
@@ -42,7 +43,7 @@ function clearError() {
 let degrees = 0; // will increment or decrement by 90 or 180
 let direction = null; // keep track of the direction (key arrows) to determine how much to increment or decrement
 window.addEventListener('keydown', e => {
-   const { right: cowElRight } = cowEl.getBoundingClientRect();
+   const { right: cowElRight, left: cowElLeft, bottom: cowElBotton } = cowEl.getBoundingClientRect();
 
    switch(e.key) {
       case 'ArrowUp':
@@ -85,7 +86,7 @@ window.addEventListener('keydown', e => {
          }
          direction = 'East';
          // code inside won't fire when the cow arrives at the field's East edge
-         if(cowElRight + 3 < parseInt(grassElWidth)) {
+         if(cowElRight < (grassElWidth - 10)) {
             cowEl.style.left = parseInt(cowEl.style.left) + moveBy + 'px';
          }
          else {
@@ -129,7 +130,7 @@ window.addEventListener('keydown', e => {
          }
          direction = 'West'; // West
          // this formula ensures the cow stops a few pixels before the field's West edge
-         if(parseInt(cowEl.style.left) > 5) {
+         if(cowElLeft > 5) {
             cowEl.style.left = parseInt(cowEl.style.left) - moveBy + 'px';
          }
          else {
