@@ -1,6 +1,5 @@
 const cowEl = document.getElementById('cow');
 const grassEl = document.querySelector('#grass');
-const directionsDiv = document.querySelector('#directions');
 const alertDiv = document.getElementsByClassName('alert')[0];
 let moveBy = 10; // move the cow 10 pixels (up, down, left or right).
 const { height: cowElHeight } = window.getComputedStyle(cowEl);
@@ -18,14 +17,14 @@ function cowStartPosition({ height, width }) {
 }
 // load cow's start position
 cowStartPosition(window.getComputedStyle(grassEl))
-// resets the cow's position but not it's rotation
+// upon resizing the screeen, resets the cow's position but not its rotation
 window.addEventListener('resize', () => {
    cowStartPosition(window.getComputedStyle(grassEl));
    window.getComputedStyle(grassEl);
    cowEl.getBoundingClientRect();
 });
 
-// show error when user gives cow more than 10 directions
+// show error when cow reaches the N, S, E, or W edge of field
 function showError(error) {
    alertDiv.textContent = error;
    alertDiv.style.display = 'block';
@@ -82,7 +81,7 @@ window.addEventListener('keydown', e => {
             cowEl.style.left = parseInt(cowEl.style.left) + moveBy + 'px';
          }
          else {
-            showError("The east coast is not my thing, chief.");
+            showError("The east coast isn't my thing, chief.");
          }
       break;
       case 'ArrowDown':
