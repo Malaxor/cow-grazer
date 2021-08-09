@@ -1,7 +1,6 @@
 const cowEl = document.getElementById('cow');
 const grassEl = document.querySelector('#grass');
 const directionsDiv = document.querySelector('#directions');
-// const keysDisplayEl = document.getElementById('directions__key-display');
 const alertDiv = document.getElementsByClassName('alert')[0];
 let moveBy = 10; // move the cow 10 pixels (up, down, left or right).
 const { height: cowElHeight } = window.getComputedStyle(cowEl);
@@ -28,17 +27,10 @@ window.addEventListener('resize', () => {
 
 // show error when user gives cow more than 10 directions
 function showError(error) {
-   // hide the user's keyboard input
-   // keysDisplayEl.style.display = 'none';
    alertDiv.textContent = error;
-   // reveal the alert div and its text content
    alertDiv.style.display = 'block';
-   setTimeout(() => alertDive.style.display = 'none', 5000)
+   setTimeout(() => alertDiv.style.display = 'none', 5000)
 }
-// function clearError() {
-//    alertDiv.style.display = 'none';
-//    // keysDisplayEl.style.display = 'block';
-// }
 
 let degrees = 0; // will increment or decrement by 90 or 180
 let direction = null; // keep track of the direction (key arrows) to determine how much to increment or decrement
